@@ -60,7 +60,7 @@ def main():
     if username and password:
         http_auth = username + ':' + password
 
-    es = Elasticsearch(host=host, port=port, use_ssl=use_ssl, http_auth=http_auth, url_prefix=url_prefix)
+    es = Elasticsearch(hosts=host, port=port, use_ssl=use_ssl, http_auth=http_auth, url_prefix=url_prefix)
 
     silence_mapping = {'silence': {'properties': {'rule_name': {'index': 'not_analyzed', 'type': 'string'},
                                                   'until': {'type': 'date', 'format': 'dateOptionalTime'},

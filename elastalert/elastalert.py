@@ -117,7 +117,7 @@ class ElastAlerter():
     @staticmethod
     def new_elasticsearch(es_conn_conf):
         """ returns an Elasticsearch instance configured using an es_conn_config """
-        return Elasticsearch(host=es_conn_conf['es_host'],
+        return Elasticsearch(hosts=es_conn_conf['es_host'],
                              port=es_conn_conf['es_port'],
                              url_prefix=es_conn_conf['es_url_prefix'],
                              use_ssl=es_conn_conf['use_ssl'],
