@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/Yelp/elastalert.svg)](https://travis-ci.org/Yelp/elastalert)
 [![Join the chat at https://gitter.im/Yelp/elastalert](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Yelp/elastalert?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## CHANGED: see below
+
 ## ElastAlert - [Read the Docs](http://elastalert.readthedocs.org).
 ### Easy & Flexible Alerting With ElasticSearch
 
@@ -111,3 +113,30 @@ ElastAlert is licensed under the Apache License, Version 2.0: http://www.apache.
 ### Read the documentation at [Read the Docs](http://elastalert.readthedocs.org).
 
 ### Questions? Drop by #elastalert on Freenode IRC.
+
+
+## Changelog by theikkila
+
+- Added Slack integration
+- Added Dockerfile and setupscript (configurator.py, start.sh)
+- Changed hostname configuration to use lists instead of string
+
+
+### Usage:
+
+```
+docker pull theikkila/elastalert
+docker run -it -v /app/mounted_rules -e ES_HOST="https://elastichost.com:443/" -e USE_SSL=True theikkila/elastalert
+
+```
+
+
+### ENV-variables
+
+See `configurator.py`
+
+- `ES_HOST`
+- `ES_PORT` (but port usage in URL is recommended)
+- `USE_SSL`
+- `VERIFY_CERTS`
+- `BUFFER_TIME`

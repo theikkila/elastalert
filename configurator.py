@@ -13,7 +13,6 @@ conf = {
 	"alert_time_limit": {
 		"days": 2
 	},
-	"slack_webhook_url": os.environ.get('SLACK_WEBHOOK', ''),
 	"buffer_time": {
  		"minutes": int(os.environ.get('BUFFER_TIME', '15'))
 	}
